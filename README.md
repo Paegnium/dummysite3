@@ -34,3 +34,31 @@ The site is ready for `https://paegnium.github.io/dummysite3/` once Pages deploy
 Product photography is bundled from the public example catalogue at [Fake Store API](https://github.com/keikaavousi/fake-store-api) (MIT project; notice retained in `assets/ASSET-NOTICES.txt`). Product trademarks and photography remain the property of their respective owners; review usage rights before commercial use.
 
 The Poppins font is bundled from [DummyJSON](https://github.com/Ovi/DummyJSON); its SIL Open Font License is retained in `assets/OFL.txt`.
+
+## Scrape product data
+
+Every product includes these fields in the **initial HTML response**, with no JavaScript execution, sign-in, or modal clicks required:
+
+`source_platform`, `title`, `price`, `currency`, `seller_id`, `seller_name`, `selling_since`, `rating`, `review_count`, `review` (an array of `{text, rating, date}`), and `product_url`.
+
+Parse the text of `script#product-data[type="application/json"]` as JSON. This embedded catalogue is also the single source of truth used to render the storefront. It includes additional display fields such as product ID, brand, image and description. Product URLs use stable `#product-N` fragments that open the corresponding product dialog, including when opened directly.
+
+- `source_platform` is `Lazora`, the storefront hosting these listings, rather than the manufacturer or Lazada.
+- `price` is a JSON number; `currency` is the ISO 4217 code `SGD`.
+- `selling_since` and each review `date` use `YYYY-MM-DD`.
+- `rating` and each review rating are numeric values on a 1–5 scale.
+- `review_count` represents the displayed aggregate count; `review` contains the two available review previews, not the entire aggregate history.
+- Seller IDs are stable store identifiers. Seller details, prices, ratings, counts and reviews are illustrative catalogue data, not scraped merchant records.
+- Seller details and review dates are also visible in each product dialog.
+
+A dependency-free reference scraper outputs exactly the requested fields:
+
+```sh
+python3 scripts/scrape_products.py https://paegnium.github.io/dummysite3/ > products.json
+```
+
+For local validation, start the HTTP server above and replace the URL with `http://127.0.0.1:8000/`. Run the catalogue contract tests with:
+
+```sh
+python3 -m unittest discover -s tests -v
+```
