@@ -35,7 +35,7 @@ Product photography is bundled from the public example catalogue at [Fake Store 
 
 The Poppins font is bundled from [DummyJSON](https://github.com/Ovi/DummyJSON); its SIL Open Font License is retained in `assets/OFL.txt`.
 
-## Scrape product data
+## Product data
 
 Every product includes these fields in the **initial HTML response**, with no JavaScript execution, sign-in, or modal clicks required:
 
@@ -50,15 +50,3 @@ Parse the text of `script#product-data[type="application/json"]` as JSON. This e
 - `review_count` represents the displayed aggregate count; `review` contains the two available review previews, not the entire aggregate history.
 - Seller IDs are stable store identifiers. Seller details, prices, ratings, counts and reviews are illustrative catalogue data, not scraped merchant records.
 - Seller details and review dates are also visible in each product dialog.
-
-A dependency-free reference scraper outputs exactly the requested fields:
-
-```sh
-python3 scripts/scrape_products.py https://paegnium.github.io/dummysite3/ > products.json
-```
-
-For local validation, start the HTTP server above and replace the URL with `http://127.0.0.1:8000/`. Run the catalogue contract tests with:
-
-```sh
-python3 -m unittest discover -s tests -v
-```
