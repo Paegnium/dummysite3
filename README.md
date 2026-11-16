@@ -50,3 +50,5 @@ Parse the text of `script#product-data[type="application/json"]` as JSON. This e
 - `review_count` represents the displayed aggregate count; `review` contains the two available review previews, not the entire aggregate history.
 - Seller IDs are stable store identifiers. Seller details, prices, ratings, counts and reviews are illustrative catalogue data, not scraped merchant records.
 - Seller details and review dates are also visible in each product dialog.
+
+The Apple MacBook Pro 14-inch listing specifies the M4 chip, 16GB unified memory and 512GB SSD, with a S$1,999 reference price. This is an indicative price, not a verified live retailer quote. Its locally bundled SVG is a product illustration; its positive reviews follow the same illustrative preview format as the rest of the catalogue.
