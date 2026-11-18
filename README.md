@@ -31,7 +31,7 @@ The site is ready for `https://paegnium.github.io/dummysite3/` once Pages deploy
 
 ## Assets
 
-Product photography is bundled from the public example catalogue at [Fake Store API](https://github.com/keikaavousi/fake-store-api) (MIT project; notice retained in `assets/ASSET-NOTICES.txt`). Product trademarks and photography remain the property of their respective owners; review usage rights before commercial use.
+The original product photography is bundled from the public example catalogue at [Fake Store API](https://github.com/keikaavousi/fake-store-api) (MIT project; notice retained in `assets/ASSET-NOTICES.txt`). Product trademarks and photography remain the property of their respective owners; review usage rights before commercial use.
 
 The Poppins font is bundled from [DummyJSON](https://github.com/Ovi/DummyJSON); its SIL Open Font License is retained in `assets/OFL.txt`.
 
@@ -53,4 +53,6 @@ Parse the text of `script#product-data[type="application/json"]` as JSON. This e
 
 The Apple MacBook Pro 14-inch listing specifies the M4 chip, 16GB unified memory and 512GB SSD, with a S$1,999 reference price. This is an indicative price, not a verified live retailer quote. Its locally bundled SVG is a product illustration; its positive reviews follow the same illustrative preview format as the rest of the catalogue.
 
-The catalogue has 45 listings across nine product models. Each model has four additional offers from different sellers, with distinct prices and conditions ranging from new to for parts or repair. These additional offers include an indicative `reference_price` in SGD and a `condition` field. Reference prices are illustrative estimates. Offers rated 2.5 stars or lower are priced at less than half their reference price. Review previews describe the individual offer and seller experience.
+The original nine Lazora product models have five offers each, with distinct prices and conditions ranging from new to for parts or repair. These additional offers include an indicative `reference_price` in SGD and a `condition` field. Reference prices are illustrative estimates. Offers rated 2.5 stars or lower are priced at less than half their reference price. Review previews describe the individual offer and seller experience.
+
+Additional products were matched across [Cartlane](https://github.com/Paegnium/dummysite) and [Tao Market](https://github.com/Paegnium/dummysite2). The 66 imported products use local DummyJSON fixture photographs from Cartlane or product illustrations from Tao Market. The DummyJSON license is included in `assets/DummyJSON-LICENSE.txt`. Overlapping offers are represented once, and the explicitly identified M1 Pro MacBook is listed separately from the M4 model. The imported listings use Lazora seller profiles and dated illustrative review previews. Their SGD reference amounts are derived from the source fixture prices using an indicative conversion factor. These amounts are catalogue estimates.
