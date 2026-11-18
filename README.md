@@ -52,3 +52,5 @@ Parse the text of `script#product-data[type="application/json"]` as JSON. This e
 - Seller details and review dates are also visible in each product dialog.
 
 The Apple MacBook Pro 14-inch listing specifies the M4 chip, 16GB unified memory and 512GB SSD, with a S$1,999 reference price. This is an indicative price, not a verified live retailer quote. Its locally bundled SVG is a product illustration; its positive reviews follow the same illustrative preview format as the rest of the catalogue.
+
+The catalogue has 45 listings across nine product models. Each model has four additional offers from different sellers, with distinct prices and conditions ranging from new to for parts or repair. These additional offers include an indicative `reference_price` in SGD and a `condition` field. Reference prices are illustrative estimates. Offers rated 2.5 stars or lower are priced at less than half their reference price. Review previews describe the individual offer and seller experience.
